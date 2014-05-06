@@ -1,0 +1,115 @@
+﻿
+/*The CSS style for the navigation box*/
+a:link,a:visited
+{
+/*margin:0;*/
+display:inline-block;
+font-weight:bold;
+color:#FFFFFF;
+/*background-color:#172399;*/
+
+padding:10px;
+text-decoration:none;
+/*text-align:center;*/
+}
+        a:hover,a:active
+{
+background-color:#333333;
+}
+            /*CSS sytel for navigation box ended*/
+
+            /*Navigation Bar endes here*/
+
+
+.NavDiv {
+
+   top:0px;
+    color:white ;
+    text-align:center;
+    Background-color:rgba(255, 255, 255, 0.5);
+
+}
+
+.NavRight {
+     cursor:pointer;
+    top:0;
+    margin-top:0;
+    right:0;
+    text-align: right;
+    float: right;
+    clear: both;
+        position:absolute;
+
+}
+
+.NavRightText {
+
+
+ pointer-events:none;
+    margin:0;
+    color:white;
+    font-size: 2em;
+    text-decoration:  none  ;
+    /*margin: 0 auto;*/
+    text-align:right;  
+
+font-weight:bold;
+padding:10px;
+}
+
+#NavRightTextClick:hover {
+    background-color:#333333;
+}
+
+.NavTextSize {
+    color:white;
+    font-size: 2em;
+    text-decoration:  none  ;
+    /*margin: 0 auto;*/
+    text-align:center;  
+    }
+
+
+.NavLeft {
+    cursor:pointer;
+    max-height:58px;
+    height:58px;
+    top:0;
+    margin-top:0;
+    left:0;
+    text-align: left;
+    float: left;
+    clear: both;
+        position:absolute;
+
+}
+
+.NavLeft:hover{
+    background-color:#333333;
+}
+
+.NavLeftContent {
+    pointer-events:none;
+    max-height:58px;
+    height:58px;
+    top:0;
+    margin-top:0;
+    left:0;
+    text-align: left;
+    float: left;
+    clear: both;
+        position:absolute;
+}
+
+
+.NavLeftText {
+    pointer-events:none;
+    padding:0;
+    margin:0;
+    margin-top:10px;
+    margin-left:65px;
+    font-size: 2em;
+    margin-right:5px;
+}
+
+/*Navigation Bar ends here*/
