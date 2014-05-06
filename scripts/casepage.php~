@@ -2,7 +2,7 @@
 require_once 'scripts/utils.php';
 
 class CasePage {
-	private $utils;
+	private Utils $utils;
 
 	private $id;
 	private $userId;

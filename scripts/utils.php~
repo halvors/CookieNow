@@ -61,8 +61,6 @@ class Utils {
 			$priorityName = "";
 			break;
 		}
-
-		return $priorityName;
 	}
 
 	public function parseStatus($status) {
@@ -79,8 +77,6 @@ class Utils {
 			$statusName = "";
 			break;
 		}
-
-		return $statusName;
 	}
 }
 ?>

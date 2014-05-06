@@ -86,12 +86,12 @@ class Database {
 		
 		if ($row) {
 			return new CasePage($row['id'], 
-					    $row['userId'], 
-					    $row['title'], 
-					    $row['content'], 
-					    $row['priority'], 
-					    $row['status'], 
-					    $row['datetime']);
+							$row['userId'], 
+							$row['title'], 
+							$row['content'], 
+							$row['priority'], 
+							$row['status'], 
+							$row['datetime']);
 		}
 		
 		$this->mysql->close($con);

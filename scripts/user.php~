@@ -1,5 +1,7 @@
 <?php
+require_once 'settings.php';
 require_once 'database.php';
+require_once 'utils.php';
 
 class User {
 	private $settings;
@@ -15,7 +17,10 @@ class User {
 	private $email;
 	
 	public function User($id, $firstname, $lastname, $username, $password, $email) {
+		$this->settings = new Settings();
 		$this->database = new Database();
+		$this->mysql = new MySQL();
+		$this->utils = new Utils();
 		
 		$this->id = $id;
 		$this->firstname = $firstname;

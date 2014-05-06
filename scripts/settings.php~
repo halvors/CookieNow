@@ -15,7 +15,7 @@ class Settings {
 	public $username = 'cookienow.tk';
 	public $password = 'cookieandmilk';
 	public $tableList = array('users',	// 0
-				  'cases');	// 1
+							  'cases');	// 1
 							
 }
 ?>

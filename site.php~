@@ -1,0 +1,102 @@
+<?php
+require_once 'scripts/settings.php';
+require_once 'scripts/database.php';
+require_once 'scripts/utils.php';
+
+class Site {
+	// Objects definitions.
+	private $settings;
+	private $database;
+	private $utils;
+	
+	// Variable definitions.
+	private $pageName;
+	private $caseId;
+	
+	public function Site() {
+		session_start();
+		
+		// Set the Objects
+		$this->settings = new Settings();
+		$this->database = new Database();
+		$this->utils = new Utils();
+		
+		// Set the variables.
+		$this->pageName = isset($_GET['viewPage']) ? $_GET['viewPage'] : null;
+		$this->caseId = isset($_GET['caseId']) ? $_GET['caseId'] : null;
+	}
+	
+	// Execute the site.
+	public function execute() {
+		echo '<!DOCTYPE html>';
+		echo '<html>';
+			echo '<head>';
+				echo '<title>' . $this->settings->name . '</title>';
+				echo '<meta name="description" content="' . $this->settings->description . '">';
+				echo '<meta name="keywords" content="' . $this->settings->keywords . '">';
+				echo '<meta name="author" content="' . implode(', ', $this->settings->authors) . '">'; // TODO: Select all authors in this?
+				echo '<meta charset="UTF-8">';
+				echo '<link rel="stylesheet" type="text/css" href="style/style.css">';
+				echo '<link rel="shortcut icon" href="images/favicon.ico">';
+			echo '</head>';
+			echo '<body>';
+				echo '<header>';
+					// TODO: Header here.
+				echo '</header>';
+				echo '<div id="main">';
+					echo '<section class="content">';
+						if (isset($_GET['viewPage'])) {
+						// View the page specified by "pageName" variable.
+							$this->viewPage($this->pageName);
+						} else if (isset($_GET['caseId'])) {
+							// View the case specified by "caseId" variable;
+							$this->viewCase($this->caseId);
+						} else {
+							// Since non page or article where specified, view the default page.
+							$this->viewPage($this->settings->defaultPage);
+						}
+					echo '</section>';
+				echo '</div>';
+				echo '<footer>';
+					echo '<div id="footer">';
+						// TODO: Footer here.
+					echo '</div>';
+				echo '</footer>';
+			echo '</body>';
+		echo '</html>';
+	}
+	
+	private function viewPage($pageName) {
+		$directory = 'pages/';
+		$fileName = $directory . $pageName . '.php';
+		
+		// If page doesn't exist in the database, check if there is a .php file that do. Else an error is shown.
+		if (in_array($fileName, glob($directory . '*.php'))) {
+			include $fileName;
+		} else {
+			echo '<article>';
+				echo '<h1>Siden ble ikke funnet!</h1>';
+				echo 'Siden du ser etter finnes ikke.';
+			echo '</article>';
+		}
+	}
+
+	private function viewCase($caseId) {
+		$case = $this->database->getCase($caseId);
+
+		if ($case != null) {
+			echo '<article>';
+				echo '<h1>' . $case->getTitle() . '</h1>';
+				echo '<p>' . $case->getContent() . '</p>';
+				echo '<p>' . $case->getPriority() . '</p>';
+				echo '<p>' . $case->getStatus() . '<p>';
+			echo '</article>'; 
+		} else {
+			echo '<article>';
+				echo '<h1>Saken ble ikke funnet!</h1>';
+				echo 'Saken du prøver se på finnes ikke.';
+			echo '</article>'; 
+		}
+	}
+}
+?>
