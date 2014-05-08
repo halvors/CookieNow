@@ -70,14 +70,16 @@ class Utils {
 		
 		switch ($status) {
 		case 0:
-			$statusName = "Unknown";
+			$statusName = "Ukjent";
 			break;
 		case 1:
-			$statusName = "Pending";
+			$statusName = "Venter";
 			break;
 		case 2:
-			$statusName = "";
+			$statusName = "Arbeider";
 			break;
+        case 3:
+            $statusName = "Utført";
 		}
 
 		return $statusName;

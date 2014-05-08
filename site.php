@@ -37,11 +37,29 @@ class Site {
 				echo '<meta name="author" content="' . implode(', ', $this->settings->authors) . '">'; // TODO: Select all authors in this?
 				echo '<meta charset="UTF-8">';
 				echo '<link rel="stylesheet" type="text/css" href="style/style.css">';
+                echo '<link rel="stylesheet" type="text/css" href="style.css">'; //Temporary -Brage
 				echo '<link rel="shortcut icon" href="images/favicon.ico">';
 			echo '</head>';
 			echo '<body>';
 				echo '<header>';
 					// TODO: Header here.
+                //Brage her
+                echo '<Nav>';
+                
+                
+                echo "<Nav id='cssmenu'>";
+                    echo "<ul>";
+                        echo "<li class='active'><a href='index.php?pages=Home'><span>Home</span></a></li>";
+                        echo "<li><a href='index.php?pages=Case'><span>Cases</span></a></li>";
+                        echo "<li><a href='index.php?pages=FAQ'><span>FAQ</span></a></li>";
+                        echo "<li class='last'><a href='index.php?pages=User'><span>Sign In</span></a></li>";
+                    echo "</ul>";
+                echo "</Nav>";
+                
+                
+                
+                echo '</Nav>';
+                //Brage ikke her mer
 				echo '</header>';
 				echo '<div id="main">';
 					echo '<section class="content">';
