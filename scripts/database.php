@@ -73,6 +73,18 @@ class Database {
 		$this->mysql->close($con);
 	}
 
+		/* Check if user already exists */
+	public function userExists($username) {
+		$con = $this->mysql->open();
+
+		$result = mysqli_query($con, 'SELECT EXISTS (SELECT * FROM ' . $this->settings->tableList[0] . ' WHERE username=\'' . $username . '\' OR email=\'' . $username . '\')');
+		$row = mysqli_fetch_array($result);
+		
+		$this->mysql->close($con);
+		
+		return $row ? true : false;
+	}
+	
 	/*
 	 *	Case
 	 */
