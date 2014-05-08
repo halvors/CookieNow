@@ -42,21 +42,16 @@ class Site {
 				echo '<header>';
 					// TODO: Header here.
                 //Brage her
-                echo '<Nav>';
-                
-                
-                echo "<Nav id='cssmenu'>";
+            echo '<Nav class="Nav">';
+               echo "<div id='cssmenu'>";
                     echo "<ul>";
                         echo "<li class='active'><a href='index.php?pages=Home'><span>Home</span></a></li>";
                         echo "<li><a href='index.php?pages=Case'><span>Cases</span></a></li>";
                         echo "<li><a href='index.php?pages=FAQ'><span>FAQ</span></a></li>";
                         echo "<li class='last'><a href='index.php?pages=User'><span>Sign In</span></a></li>";
                     echo "</ul>";
-                echo "</Nav>";
-                
-                
-                
-                echo '</Nav>';
+                echo "</div>";
+            echo '</Nav>';
                 //Brage ikke her mer
 				echo '</header>';
 				echo '<div id="main">';
