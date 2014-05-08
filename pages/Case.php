@@ -1,9 +1,6 @@
 <?php
 $input_class = '';
 
-
-?>
-
 echo '<form>';
 echo '<table>';
 
@@ -14,30 +11,36 @@ echo '<table>';
 
             echo '</td>';
         echo '</tr>';
-        <tr>
-            <td>Prioritet: </td>
-            <td>
-                <select name="Priority">
-                    <option value="lav">Lav</option>
-                    <option value="normal">Normal</option>
-                    <option value="høy">Høy</option>
-                    <option value="haster">Haster</option>
-                </select>
-            </td>
-        </tr>
+        echo '<tr>';
+            echo '<td>Prioritet: </td>';
+            echo '<td>';
+                echo '<select name="Priority">';
+                    echo '<option value="lav">Lav</option>';
+                    echo '<option value="normal">Normal</option>';
+                    echo '<option value="høy">Høy</option>';
+                    echo '<option value="haster">Haster</option>';
+                echo '</select>';
+            echo '</td>';
+        echo '</tr>';
 
-        <tr>
-            <td>Beskrivelse: </td>
-            <td><textarea rows="10" cols="50" class="" name="Content">
+        echo '<tr>';
+            echo '<td>Beskrivelse: </td>';
+            echo '<td>';
+                echo '<textarea rows="10" cols="50" class="" name="Content">';
 
-                </textarea></td>
-        </tr>
+                echo '</textarea>';
 
-        <!--Button-->
-        <tr>
-            <td></td>
-            <td><input name="submit" type="button" Value="Send" /></td>
-        </tr>
-    </table>
+                  echo '</td>';
+        echo '</tr>';
 
-</form>
+        echo '<tr>';
+            echo '<td></td>';
+            echo '<td>';
+                echo '<input name="submit" type="button" Value="Send" />'; 
+                echo '</td>';
+        echo '</tr>';
+    echo '</table>';
+
+echo '</form>';
+?>
+
