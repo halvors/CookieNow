@@ -42,21 +42,19 @@ class Site {
 				echo '<header>';
 					// TODO: Header here.
                 //Brage her
-                echo '<Nav>';
-                
-                
-                echo "<Nav id='cssmenu'>";
+                echo '<nav id="cssmenu">';
                     echo "<ul>";
-                        echo "<li class='active'><a href='index.php?pages=Home'><span>Home</span></a></li>";
-                        echo "<li><a href='index.php?pages=Case'><span>Cases</span></a></li>";
-                        echo "<li><a href='index.php?pages=FAQ'><span>FAQ</span></a></li>";
-                        echo "<li class='last'><a href='index.php?pages=User'><span>Sign In</span></a></li>";
+                        echo "<li><a href='index.php?viewPage=mycases'><span>Mine saker</span></a></li>";
+						echo "<li><a href='index.php?viewPage=newcase'><span>Ny sak</span></a></li>";
+                        echo "<li><a href='index.php?viewPage=faq'><span>FAQ</span></a></li>";
+						
+						if ($this->utils->isAuthenticated()) {
+							echo "<li class='last'><a href='index.php?viewPage=logout'><span>Logg ut</span></a></li>";
+						} else {
+							echo "<li class='last'><a href='index.php?viewPage=login'><span>Logg inn</span></a></li>";
+						}
                     echo "</ul>";
-                echo "</Nav>";
-                
-                
-                
-                echo '</Nav>';
+                echo '</nav>';
                 //Brage ikke her mer
 				echo '</header>';
 				echo '<div id="main">';
