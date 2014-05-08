@@ -42,7 +42,7 @@ class Site {
 				echo '<header>';
 					// TODO: Header here.
                 //Brage her
-            echo '<Nav class="Nav">';
+            echo '<nav class="nav">';
                echo "<div id='cssmenu'>";
                     echo "<ul>";
                         echo "<li class='active'><a href='index.php?pages=Home'><span>Home</span></a></li>";
@@ -51,7 +51,7 @@ class Site {
                         echo "<li class='last'><a href='index.php?pages=User'><span>Sign In</span></a></li>";
                     echo "</ul>";
                 echo "</div>";
-            echo '</Nav>';
+            echo '</nav>';
                 //Brage ikke her mer
 				echo '</header>';
 				echo '<div id="main">';
