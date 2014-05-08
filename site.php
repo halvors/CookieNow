@@ -42,18 +42,9 @@ class Site {
 				echo '<header>';
 					// TODO: Header here.
                 //Brage her
-<<<<<<< HEAD
-            echo '<nav class="nav">';
-               echo "<div id='cssmenu'>";
-                    echo "<ul>";
-                        echo "<li class='active'><a href='index.php?pages=Home'><span>Home</span></a></li>";
-                        echo "<li><a href='index.php?pages=Case'><span>Cases</span></a></li>";
-                        echo "<li><a href='index.php?pages=FAQ'><span>FAQ</span></a></li>";
-                        echo "<li class='last'><a href='index.php?pages=User'><span>Sign In</span></a></li>";
-                    echo "</ul>";
-                echo "</div>";
-            echo '</nav>';
-=======
+//<<<<<<< HEAD
+                include 'nav.php';
+//=======
                 echo '<nav id="cssmenu">';
                     echo "<ul>";
                         echo "<li><a href='index.php?viewPage=mycases'><span>Mine saker</span></a></li>";
@@ -67,7 +58,7 @@ class Site {
 						}
                     echo '</ul>';
                 echo '</nav>';
->>>>>>> 1ac0090c6f8eeb6d7c7b761d93fffd12cf6f280f
+//>>>>>>> 1ac0090c6f8eeb6d7c7b761d93fffd12cf6f280f
                 //Brage ikke her mer
 				echo '</header>';
 				echo '<div id="main">';
