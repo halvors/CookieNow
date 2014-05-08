@@ -1,6 +1,6 @@
 <?php
 echo '<table>';
-	echo '<form action="scripts/process_user.php?action=5&returnPage=profile" method="post">';
+	echo '<form action="scripts/process_case.php?action=1&returnPage=mycases" method="post">';
         echo '<tr>';
             echo '<td>Tittel :</td>';
             echo '<td>';
@@ -28,7 +28,7 @@ echo '<table>';
         echo '<tr>';
             echo '<td></td>';
             echo '<td>';
-                echo '<input name="submit" type="button" value="Send" />'; 
+                echo '<input type="submit" value="Send inn">';
             echo '</td>';
         echo '</tr>';
 	echo '</form>';

@@ -17,14 +17,17 @@ if ($utils->isAuthenticated()) {
 		if ($action == 1) {
 			if (isset($_POST['title']) &&
 				isset($_POST['content']) &&
-				isset($_POST['priority']) &&
-				isset($_POST['status'])) {
+				isset($_POST['priority'])) {
 				$title = $_POST['title'];
 				$content = $_POST['content'];
+				$status = 1;
 				$priority = $_POST['priority'];
-				$status = $_POST['status'];
+				$opened = date('Y-m-d H:i:s'); 
+				$closed = date('Y-m-d H:i:s'); 
 				
-				$database->createCase($user->getId(), $title, $content, $priority, $status);
+				echo "Success!";
+				
+				$database->createCase($user->getId(), $title, $content, $status, $priority, $opened, $closed);
 			}
 		} else if ($action == 2) {
 			if (isset($_GET['id'])) {
@@ -44,5 +47,5 @@ if ($utils->isAuthenticated()) {
 	}
 }
 
-header('Location: ' . $returnPage);
+//header('Location: ' . $returnPage);
 ?>
