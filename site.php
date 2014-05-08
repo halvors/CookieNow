@@ -53,7 +53,7 @@ class Site {
 						} else {
 							echo "<li class='last'><a href='index.php?viewPage=login'><span>Logg inn</span></a></li>";
 						}
-                    echo "</ul>";
+                    echo '</ul>';
                 echo '</nav>';
                 //Brage ikke her mer
 				echo '</header>';

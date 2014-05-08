@@ -1,10 +1,25 @@
+body {
+    margin:0;
+    padding:0;
+    background-image:url(res/background.jpg);
+
+
+}
+
+.Nav {
+    padding:0;
+    margin:0;
+    top:0;
+}
+
 #cssmenu {
   zoom: 1;
   width: auto;
-  background: #000000;
+  background-color:rgba(255, 255, 255, 1);
   padding: 8px 0;
 
   margin:0px;
+  top:0;
 }
 #cssmenu:before {
   content: '';
@@ -23,7 +38,7 @@
   font-family: Verdana, Helvetica, Arial, sans-serif;
   margin: 0;
   padding: 0;
-  border-bottom: 1px solid #009cb8;
+  border-bottom: 1px solid #0150bc;
   zoom: 1;
 }
 #cssmenu ul:before {
@@ -55,9 +70,9 @@
   border-bottom: 2px solid #009cb8;
 }
 #cssmenu li:hover a {
-  color: #fff;
+  color: #333;
 }
 #cssmenu .active a {
-  color: #fff;
+  color: #333;
   font-weight: 700;
 }
