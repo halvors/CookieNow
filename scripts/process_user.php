@@ -20,8 +20,6 @@ if (isset($_GET['action'])) {
 			$password = hash('sha256', $_POST['password']);
 			
 			if ($database->userExists($username)) {
-				echo 'dfsdsfdsfdsfdsfdsf';
-				
 				$user = $database->getUserByName($username);
 				$storedPassword = $user->getPassword();
 				
@@ -35,13 +33,17 @@ if (isset($_GET['action'])) {
 		} else {
 			echo 'Du har ikke skrevet inn et brukernavn og passord.';
 		}
+		
+		return;
 	/* Logout user */
 	} else if ($action == 2) {
 		if (isset($_SESSION['user'])) {
 			unset($_SESSION['user']);
 		}
+		
+		return;
 	}
 }
 
-echo 'sadasdasd';
+header('Location: ' . $returnPage);
 ?>

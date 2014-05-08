@@ -40,25 +40,24 @@ class Site {
 			echo '</head>';
 			echo '<body>';
 				echo '<header>';
-					// TODO: Header here.
-                //Brage her
-//<<<<<<< HEAD
-//=======
-                echo '<nav id="cssmenu">';
-                    echo "<ul>";
-                        echo "<li><a href='index.php?viewPage=mycases'><span>Mine saker</span></a></li>";
-						echo "<li><a href='index.php?viewPage=newcase'><span>Ny sak</span></a></li>";
-                        echo "<li><a href='index.php?viewPage=faq'><span>FAQ</span></a></li>";
-						
-						if ($this->utils->isAuthenticated()) {
-							echo "<li class='last'><a href='index.php?viewPage=logout'><span>Logg ut</span></a></li>";
-						} else {
-							echo "<li class='last'><a href='index.php?viewPage=login'><span>Logg inn</span></a></li>";
-						}
-                    echo '</ul>';
-                echo '</nav>';
-//>>>>>>> 1ac0090c6f8eeb6d7c7b761d93fffd12cf6f280f
-                //Brage ikke her mer
+					echo '<nav class="nav">';
+						echo "<div id='cssmenu'>";
+							echo "<ul>";
+								if ($this->utils->isAuthenticated()) {
+									echo "<li><a href='index.php?viewPage=mycases'><span>Mine saker</span></a></li>";
+									echo "<li><a href='index.php?viewPage=newcase'><span>Ny sak</span></a></li>";
+								}
+								
+								echo "<li><a href='index.php?viewPage=faq'><span>FAQ</span></a></li>";
+								
+								if ($this->utils->isAuthenticated()) {
+									echo "<li class='last'><a href='index.php?viewPage=logout'><span>Logg ut</span></a></li>";
+								} else {
+									echo "<li class='last'><a href='index.php?viewPage=login'><span>Logg inn</span></a></li>";
+								}
+							echo '</ul>';
+						echo '</div>';
+					echo '</nav>';
 				echo '</header>';
 				echo '<div id="main">';
 					echo '<section class="content">';

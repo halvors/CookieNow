@@ -109,11 +109,11 @@ class Database {
 		$this->mysql->close($con);
 	}
 	
-	/* Get a list of all pages */
-	public function getCases() {
+	/* Get a list of all pages */	
+	public function getCases($userId) {
 		$con = $this->mysql->open();
 		
-		$result = mysqli_query($con, 'SELECT id FROM ' . $this->settings->tableList[1]);
+		$result = mysqli_query($con, 'SELECT id FROM ' . $this->settings->tableList[1] . ' WHERE userId=\'' . $userId . '\'');
 		$caseList = array();
 		
 		while ($row = mysqli_fetch_array($result)) {
@@ -126,15 +126,17 @@ class Database {
 	}
 	
 	/* Create a new page */
-	public function createCase($userId, $title, $content, $priority, $status) {
+	public function createCase($userId, $title, $content, $status, $priority, $opened, $closed) {
 		$con = $this->mysql->open();
 		
-		mysqli_query($con, 'INSERT INTO ' . $this->settings->tableList[1] . ' (userId, title, content, priority, status) 
+		mysqli_query($con, 'INSERT INTO ' . $this->settings->tableList[1] . ' (userId, title, content, status, priority, opened, closed) 
 							VALUES (\'' . $userId . '\', 
 									\'' . $title . '\', 
 									\'' . $content . '\', 
+									\'' . $status . '\', 
 									\'' . $priority . '\', 
-									\'' . $status . '\')');
+									\'' . $opened . '\', 
+									\'' . $closed . '\')');
 		
 		$this->mysql->close($con);
 	}
