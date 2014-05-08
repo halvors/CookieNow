@@ -11,7 +11,6 @@ class Site {
 	
 	// Variable definitions.
 	private $pageName;
-	private $caseId;
 	
 	public function Site() {
 		session_start();
@@ -23,7 +22,6 @@ class Site {
 		
 		// Set the variables.
 		$this->pageName = isset($_GET['viewPage']) ? $_GET['viewPage'] : null;
-		$this->caseId = isset($_GET['caseId']) ? $_GET['caseId'] : null;
 	}
 	
 	// Execute the site.
@@ -48,9 +46,6 @@ class Site {
 						if (isset($_GET['viewPage'])) {
 						// View the page specified by "pageName" variable.
 							$this->viewPage($this->pageName);
-						} else if (isset($_GET['caseId'])) {
-							// View the case specified by "caseId" variable;
-							$this->viewCase($this->caseId);
 						} else {
 							// Since non page or article where specified, view the default page.
 							$this->viewPage($this->settings->defaultPage);
@@ -78,19 +73,6 @@ class Site {
 				echo '<h1>Siden ble ikke funnet!</h1>';
 				echo 'Siden du ser etter finnes ikke.';
 			echo '</article>';
-		}
-	}
-
-	private function viewCase($caseId) {
-		$case = $this->database->getCase($caseId);
-
-		if ($case != null) {
-			$case->show();
-		} else {
-			echo '<article>';
-				echo '<h1>Saken ble ikke funnet!</h1>';
-				echo 'Saken du prøver se på finnes ikke.';
-			echo '</article>'; 
 		}
 	}
 }
