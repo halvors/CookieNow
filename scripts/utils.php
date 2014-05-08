@@ -52,14 +52,19 @@ class Utils {
 		
 		switch ($priority) {
 		case 0:
-			$priorityName = "Unknown";
+			$priorityName = "Ukjent";
 			break;
 		case 1:
-			$priorityName = "Pending";
+			$priorityName = "Lav";
 			break;
 		case 2:
-			$priorityName = "";
+			$priorityName = "Normal";
 			break;
+        case 3: 
+            $priorityName = "Høy";
+            break;
+        case 4: 
+            $priorityName = "Haster";
 		}
 
 		return $priorityName;
