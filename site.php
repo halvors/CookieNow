@@ -43,7 +43,6 @@ class Site {
 					// TODO: Header here.
                 //Brage her
 //<<<<<<< HEAD
-                include 'nav.php';
 //=======
                 echo '<nav id="cssmenu">';
                     echo "<ul>";
